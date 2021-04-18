@@ -40,6 +40,7 @@ PREREQUISITE_APPS = [
 ]
 
 PROJECT_APPS = [
+    'apps.homesite.apps.HomesiteConfig',
 ]
 
 INSTALLED_APPS = PREREQUISITE_APPS + PROJECT_APPS

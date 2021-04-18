@@ -2,6 +2,7 @@
 # PROJECT: SlugRider
 # ref: https://git-scm.com/docs/gitignore
 # ref: https://www.toptal.com/developers/gitignore
+# ref: https://github.com/git-guides/git-push
 #####################################################
 
 # Created by https://www.toptal.com/developers/gitignore/api/django,python
