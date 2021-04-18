@@ -1,7 +1,44 @@
 {% extends './base.html' %}
 
+{% load static %}
+
 {% block content %}
-<div class="container-fluid">
-HOME PAGEss
+<div class="container bgimage">
+
+<div class="jumbotron py-6"
+  style="height: 500px; background-repeat: no-repeat; background-image: url('http://127.0.0.1:8000/static/homesite/img/metro-train.jpeg'); background-size: 1200px 850px;">
+        <p class="lead text-center" style="padding: 130px;">
+            <a class="h3 btn btn-primary btn-lg" style="padding: 20px 35px" href="#" role="button">Find a Rider</a>
+        </p>
 </div>
+</div>
+
+<div class="container-fluid mb-4">
+    <div class="container">
+    <div class="container bg-warning display-4 text-center font-weight-bold" style="padding: 3.5rem 2rem;">Why Register Here</div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="card-columns d-flex justify-content-center">
+
+<div class="card text-center">
+<img class="card-img-top" src="{% static 'homesite/img/commuter-surge.jpeg' %}" height="350px" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title h3">No More Sitting in Traffic for Hours</h5>
+  </div>
+</div>
+
+<div class="card text-center">
+<img class="card-img-top" src="{% static 'homesite/img/slug-lines.gif' %}" height="350px" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title h3">Enjoy a Safe Ride Home</h5>
+  </div>
+</div>
+
+        </div>
+    </div>
+</div>
+
 {% endblock content %}
