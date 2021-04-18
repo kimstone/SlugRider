@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Custom Bootstrap -->
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="{% static 'homesite/css/homesite.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'homesite/img/favicon.ico' %}">
+
+    <!-- FONTS -->
+
+    <title>{% block title %}Slug Rider{% endblock title %}</title>
+
+</head>
+<body class='page'>
+
+{% include './partials/navigation.html' %}
+{% include './partials/header.html' %}
+
+<div id="page-container" class="container-fluid">
+    <div class="row">
+        {% block content %}
+            HTML TAG: BODY -- APPLICATION TEMPLATE ERROR
+        {% endblock content %}
+    </div>
+</div>
+
+{% include './partials/footer.html' %}
+
+</body>
+</html>

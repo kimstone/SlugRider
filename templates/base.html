@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block page_meta_description %}ERROR - Meta Description{% endblock page_meta_description %}">
+
+    <!-- Custom Bootstrap -->
+    <link rel="stylesheet" href="{% static 'trips/css/custom-bootstrap.css' %}">
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="{% static 'trips/css/trips.css' %}">
+
+    <link rel="icon" type="image/x-icon" href="{% static 'trips/img/favicon.ico' %}">
+
+    <!-- FONTS -->
+
+    <title>{% block title %}ERROR - Title{% endblock title %}</title>
+
+</head>
+<body class='page'>
+{% include 'trips/partials/nav_menu.html' %}
+{% include 'trips/partials/header.html' %}
+<div id="page-container" class="container-fluid">
+    <div class="row">
+        {% block content %}
+            HTML TAG: BODY -- APPLICATION TEMPLATE ERROR
+        {% endblock content %}
+    </div>
+</div>
+{% include 'trips/partials/footer.html' %}
+{% include 'trips/partials/js_footer.html' %}
+</body>
+</html>
