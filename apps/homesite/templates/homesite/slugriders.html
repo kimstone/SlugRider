@@ -2,9 +2,54 @@
 
 {% block content %}
 <div class="container">
-    <div class="" style="height: 250px; background-repeat: no-repeat; background-image: url('http://127.0.0.1:8000/static/homesite/img/beltway-traffic-2.jpg');">
+    <div class=""
+         style="height: 250px; background-repeat: no-repeat; background-image: url('http://127.0.0.1:8000/static/homesite/img/beltway-traffic-2.jpg');">
     </div>
 
     <div class="py-4"><h1 class="text-left">Slug Riders</h1></div>
+
+    <div class="row w-100 mx-auto mx-5 pt-2">
+        <div class="col"><h3 class="text-start">Welcome, {{ user.first_name }}!</h3></div>
+    </div>
+
+    <div class="row w-100 mx-auto m-3">
+        <div class="col">
+            <table class="table table-bordered border-dark">
+                <thead>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <!--<th scope="col">Slug line</th>-->
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for rider in riders %}
+                <tr>
+                    <td>{{ rider.first_name }}</td>
+                    <td>{{ rider.last_name }}</td>
+                    <td>{{ rider.email }}</td>
+                    <!--<td></td>-->
+                    <td>
+                        {% if user.id == rider.id %}
+                            <a class="btn btn-info btn-sm" href="{% url 'edit' rider.id %}">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'delete' rider.id %}">Delete</a>
+                        {% elif user.is_admin %}
+                            <a class="btn btn-info btn-sm" href="{% url 'edit' rider.id %}">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'delete' rider.id %}">Delete</a>
+                        {% else %}
+                            <a class="btn btn-info btn-sm disabled" href="{% url 'edit' rider.id %}">Edit</a>
+                            <a class="btn btn-danger btn-sm disabled" href="{% url 'delete' rider.id %}">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
 </div>
 {% endblock content %}

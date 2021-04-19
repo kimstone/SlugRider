@@ -9,11 +9,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{% url 'profile' %}">My Profile</a>
+            <a class="nav-item nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+
+            {% if 'user_id' in request.session %}
+            <!--<a class="nav-item nav-link" href="{% url 'home' %}">My Profile</a>-->
             <a class="nav-item nav-link" href="{% url 'riders' %}">Slug Riders</a>
             <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+            {% endif %}
+
+            <a class="nav-item nav-link" href="{% url 'logmein' %}">Login</a>
         </div>
     </div>
 </nav>

@@ -6,44 +6,35 @@
          style="height: 250px; background-repeat: no-repeat; background-image: url('http://127.0.0.1:8000/static/homesite/img/beltway-traffic-2.jpg');">
     </div>
 
-    <div class="py-4"><h1 class="text-left">Profile Update Form</h1></div>
+    <div class="py-4"><h1 class="text-left">You have Successfully Registered.</h1></div>
+    <p>Use the form to login.</p>
 
     <div class="col px-4 mx-5">
-
         {% if messages %}
         <ul class="messages">
             {% for message in messages %}
-            {% if 'registration-form' in message.tags %}
+            {% if 'login-form' in message.tags %}
             <li class="{{ message.tags }}">{{ message }}</li>
             {% endif %}
             {% endfor %}
         </ul>
         {% endif %}
 
-        <form action="{% url 'update' this_rider.id %}" id="registration-form" name="registration-form" method="POST">
+        <form action="{% url 'login' %}" id="login-form" name="login-form" method="POST">
             {% csrf_token %}
-            <div class="mb-3">
-                <label for="first_name" class="form-label my-2">First Name</label>
-                <input type="text" class="form-control" id="first_name" name="first_name" value="{{ this_rider.first_name }}">
-            </div>
-            <div class="mb-3">
-                <label for="last_name" class="form-label my-2">Last Name</label>
-                <input type="text" class="form-control" id="last_name" name="last_name" value="{{ this_rider.last_name }}">
-            </div>
             <div class="form-group">
-                <label class="my-2" for="email_address">Email address</label>
+                <label class="my-2" for="email_address">Email Address</label>
                 <input type="email" class="form-control" id="email_address" name="email_address"
-                       value="{{ this_rider.email }}">
+                       placeholder="Enter Your Best Email">
             </div>
             <div class="form-group">
                 <label for="password" class="my-2">Password</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="">
             </div>
             <div class="col text-center">
-                <button type="submit" class="btn btn-primary btn-sm px-4 my-3">Update My Profile</button>
+                <button type="submit" class="btn btn-primary btn-sm px-4 my-3">Login</button>
             </div>
         </form>
-
     </div>
 </div>
 {% endblock content %}
